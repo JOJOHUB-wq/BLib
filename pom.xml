@@ -52,6 +52,7 @@
                                 </goals>
                                 <configuration>
                                     <executable>./nms-init.sh</executable>
+                                    <skip>${skipInit}</skip>
                                 </configuration>
                             </execution>
                         </executions>
@@ -81,6 +82,7 @@
                                 </goals>
                                 <configuration>
                                     <executable>nms-init.bat</executable>
+                                    <skip>${skipInit}</skip>
                                 </configuration>
                             </execution>
                         </executions>
