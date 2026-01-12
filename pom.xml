@@ -20,6 +20,7 @@
         <module>V1_21_5</module>
         <module>V1_21_6</module>
         <module>V1_21_9</module>
+        <module>V1_21_11</module>
         <module>MinimessageSupport</module>
         <module>BLib-Nbt</module>
         <module>ShadedDFU</module>
@@ -28,6 +29,33 @@
     <build>
         <defaultGoal>clean install</defaultGoal>
     </build>
+    <repositories>
+        <repository>
+            <id>by1337-repo-releases</id>
+            <url>https://repo.by1337.space/repository/maven-releases/</url>
+        </repository>
+        <repository>
+            <id>by1337-repo-snapshots</id>
+            <url>https://repo.by1337.space/repository/maven-snapshots/</url>
+        </repository>
+        <repository>
+            <id>bytecode.space</id>
+            <url>https://repo.bytecode.space/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>spigotmc-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>minecraft-libraries</id>
+            <name>Minecraft Libraries</name>
+            <url>https://libraries.minecraft.net</url>
+        </repository>
+    </repositories>
     <distributionManagement>
         <repository>
             <id>by1337.repo.2</id>
