@@ -95,11 +95,16 @@ public class FastItemMutatorV1211 implements FastItemMutator {
     }
 
     static {
-        DATA_COMPONENTS = new HashMap<>();
-        for (DataComponentType<?> dataComponentType : BuiltInRegistries.DATA_COMPONENT_TYPE) {
-            var key = BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(dataComponentType);
-            DATA_COMPONENTS.put(key.getPath().toLowerCase(), dataComponentType);
-            DATA_COMPONENTS.put(key.toString().toLowerCase(), dataComponentType);
+        try {
+            DATA_COMPONENTS = new HashMap<>();
+            for (DataComponentType<?> dataComponentType : BuiltInRegistries.DATA_COMPONENT_TYPE) {
+                var key = BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(dataComponentType);
+                DATA_COMPONENTS.put(key.getPath().toLowerCase(), dataComponentType);
+                DATA_COMPONENTS.put(key.toString().toLowerCase(), dataComponentType);
+            }
+        } catch (Throwable t) {
+            t.printStackTrace();
+            throw t;
         }
     }
 }
