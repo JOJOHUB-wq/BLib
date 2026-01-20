@@ -109,19 +109,7 @@
         </dependency>
         <dependency>
             <groupId>org.by1337.blib.nms</groupId>
-            <artifactId>V1_20_6</artifactId>
-            <version>1.7.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.mojang</groupId>
-            <artifactId>datafixerupper</artifactId>
-            <version>8.0.16</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.by1337.blib.nms</groupId>
-            <artifactId>V1_21_6</artifactId>
+            <artifactId>V1_21_5</artifactId>
             <scope>provided</scope>
             <version>${revision}</version>
             <exclusions>
@@ -130,6 +118,12 @@
                     <artifactId>paper-nms</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>datafixerupper</artifactId>
+            <version>8.0.16</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.sk89q.worldedit</groupId>
