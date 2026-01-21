@@ -20,7 +20,7 @@ import java.util.Objects;
 
 @NMSAccessor(forClazz = FastItemMutator.class, from = Version.V1_21_11)
 public class FastItemMutatorV1211 implements FastItemMutator {
-    private static final Map<String, DataComponentType<?>> DATA_COMPONENTS;
+    private static Map<String, DataComponentType<?>> DATA_COMPONENTS;
 
     public ItemStack asBukkitMirror(@NotNull Object itemStack) {
         return CraftItemStack.asCraftMirror((net.minecraft.world.item.ItemStack) itemStack);
@@ -91,20 +91,25 @@ public class FastItemMutatorV1211 implements FastItemMutator {
 
     @SuppressWarnings("unchecked")
     public  <T> DataComponentType<T> getDataComponentType(@NotNull String key) {
+        if (DATA_COMPONENTS == null) {
+            initDataComponents();
+        }
         return (DataComponentType<T>) Objects.requireNonNull(DATA_COMPONENTS.get(key), "Unknown data component " + key);
     }
 
-    static {
+    private synchronized void initDataComponents() {
+        if (DATA_COMPONENTS != null) return;
         try {
-            DATA_COMPONENTS = new HashMap<>();
+            Map<String, DataComponentType<?>> map = new HashMap<>();
             for (DataComponentType<?> dataComponentType : BuiltInRegistries.DATA_COMPONENT_TYPE) {
                 var key = BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(dataComponentType);
-                DATA_COMPONENTS.put(key.getPath().toLowerCase(), dataComponentType);
-                DATA_COMPONENTS.put(key.toString().toLowerCase(), dataComponentType);
+                map.put(key.getPath().toLowerCase(), dataComponentType);
+                map.put(key.toString().toLowerCase(), dataComponentType);
             }
+            DATA_COMPONENTS = map;
         } catch (Throwable t) {
             t.printStackTrace();
-            throw t;
+            throw new RuntimeException("Failed to initialize data components", t);
         }
     }
 }
