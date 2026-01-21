@@ -23,7 +23,7 @@ import java.util.Base64;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-@NMSAccessor(forClazz = ItemStackSerialize.class, from = Version.V1_21_6)
+@NMSAccessor(forClazz = ItemStackSerialize.class, from = Version.V1_21_6, to = Version.V1_21_10)
 public class ItemStackSerializeV1216 implements ItemStackSerialize {
 
     private final ItemStackSerializeV1215 nms = new ItemStackSerializeV1215();

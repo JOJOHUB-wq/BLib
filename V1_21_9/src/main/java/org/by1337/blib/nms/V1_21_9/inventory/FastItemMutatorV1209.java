@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-@NMSAccessor(forClazz = FastItemMutator.class, from = Version.V1_21_9)
+@NMSAccessor(forClazz = FastItemMutator.class, from = Version.V1_21_9, to = Version.V1_21_10)
 public class FastItemMutatorV1209 implements FastItemMutator {
     private final FastItemMutatorV1206 nms = new FastItemMutatorV1206();
 

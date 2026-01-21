@@ -35,7 +35,7 @@ import java.util.Base64;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-@NMSAccessor(forClazz = ParseCompoundTag.class, from = Version.V1_21_6)
+@NMSAccessor(forClazz = ParseCompoundTag.class, from = Version.V1_21_6, to = Version.V1_21_10)
 public class ParseCompoundTagV1216 implements ParseCompoundTag {
     private final ParseCompoundTagV1215 nms = new ParseCompoundTagV1215();
 

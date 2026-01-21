@@ -18,7 +18,7 @@ import org.by1337.blib.util.Version;
 import org.by1337.blib.world.BlockUtil;
 import org.jetbrains.annotations.Nullable;
 
-@NMSAccessor(forClazz = BlockUtil.class, from = Version.V1_21_6)
+@NMSAccessor(forClazz = BlockUtil.class, from = Version.V1_21_6, to = Version.V1_21_10)
 public class BlockUtil1216 implements BlockUtil {
     private final ParseCompoundTag compoundTag = new ParseCompoundTagV1215();
 
