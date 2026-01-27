@@ -1,4 +1,4 @@
-package org.by1337.blib.nms.V1_21_6.inventory;
+package org.by1337.blib.nms.V1_21_11.inventory;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.papermc.paper.plugin.entrypoint.classloader.PaperPluginClassLoader;
@@ -23,8 +23,8 @@ import java.util.Base64;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-@NMSAccessor(forClazz = ItemStackSerialize.class, from = Version.V1_21_6, to = Version.V1_21_10)
-public class ItemStackSerializeV1216 implements ItemStackSerialize {
+@NMSAccessor(forClazz = ItemStackSerialize.class, from = Version.V1_21_11)
+public class ItemStackSerializeV1211 implements ItemStackSerialize {
 
     private final ItemStackSerializeV1215 nms = new ItemStackSerializeV1215();
 

@@ -108,9 +108,7 @@ public class NmsFactory {
             try {
                 return value == null ? value = supplier.get() : value;
             } catch (Throwable t) {
-                if (BLib.DEBUG) {
-                    BLib.getInstance().getSLF4JLogger().error("Exception while calling LazyLoad", t);
-                }
+                BLib.getInstance().getSLF4JLogger().error("Exception while calling LazyLoad", t);
                 return null;
             }
         }

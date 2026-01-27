@@ -1,17 +1,12 @@
-package org.by1337.blib.nms.V1_21_6.nbt;
+package org.by1337.blib.nms.V1_21_11.nbt;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import io.netty.handler.codec.compression.ZlibEncoder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.*;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.CompressionEncoder;
-import net.minecraft.network.Connection;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.network.ServerConnectionListener;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 import net.minecraft.world.item.equipment.trim.TrimMaterials;
 import net.minecraft.world.item.equipment.trim.TrimPatterns;
@@ -35,8 +30,8 @@ import java.util.Base64;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-@NMSAccessor(forClazz = ParseCompoundTag.class, from = Version.V1_21_6, to = Version.V1_21_10)
-public class ParseCompoundTagV1216 implements ParseCompoundTag {
+@NMSAccessor(forClazz = ParseCompoundTag.class, from = Version.V1_21_11)
+public class ParseCompoundTagV1211 implements ParseCompoundTag {
     private final ParseCompoundTagV1215 nms = new ParseCompoundTagV1215();
 
     @Override
